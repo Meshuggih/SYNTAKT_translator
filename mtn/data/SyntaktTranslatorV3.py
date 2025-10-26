@@ -1,7 +1,4 @@
-"""Compatibility module forwarding to :mod:`sychord.translator`."""
+"""Alias conservé pour compatibilité ascendante avec Pythonista V3."""
 from __future__ import annotations
 
-try:  # pragma: no cover
-    from ..sychord.translator import *  # type: ignore F401,F403
-except Exception:  # pragma: no cover
-    from sychord.translator import *  # type: ignore F401,F403
+from .translator import *  # noqa: F401,F403 - réexport complet voulu

@@ -5,16 +5,13 @@ from dataclasses import dataclass, field
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+import csv
 import json
 import logging
 import math
 import re
-import csv
 
-try:  # pragma: no cover - fallback for direct imports
-    from .kb_scales import recommend_kb_scale
-except Exception:  # pragma: no cover
-    from kb_scales import recommend_kb_scale
+from .kb_scales import recommend_kb_scale
 
 __all__ = [
     "Session",
@@ -28,6 +25,17 @@ __all__ = [
     "get_doc",
     "get_version",
     "ANALYSIS_JSON_SCHEMA",
+    "NOTE_VALUES",
+    "VALUES_TO_NOTES",
+    "ALL_ROOTS",
+    "normalize_note",
+    "midi_from_note_oct",
+    "note_oct_from_midi",
+    "build_syntakt_library",
+    "voices_with_octaves",
+    "parse_free_input",
+    "list_matches_symbol",
+    "list_matches_notes",
 ]
 
 
@@ -92,24 +100,6 @@ def _load_doc_cache(path: Path = DOC_PATH) -> Dict[str, Any]:
         log.error("Lecture impossible de %s: %s", path, exc)
         _DOC_CACHE = {}
     return _DOC_CACHE
-
-__all__ = [
-    "NOTE_VALUES",
-    "VALUES_TO_NOTES",
-    "ALL_ROOTS",
-    "normalize_note",
-    "midi_from_note_oct",
-    "note_oct_from_midi",
-    "build_syntakt_library",
-    "voices_with_octaves",
-    "parse_free_input",
-    "list_matches_symbol",
-    "list_matches_notes",
-    "Session",
-    "format_analysis_fr",
-    "aggregated_chord_pcs_from_results",
-    "recommend_kb_scale",
-]
 
 # ---------------------- Notes & Normalisation ----------------------
 NOTE_VALUES: Dict[str, int] = {
