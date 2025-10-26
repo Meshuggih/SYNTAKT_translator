@@ -1,34 +1,7 @@
-"""Bibliothèque principale pour l'analyseur Syntakt."""
-from __future__ import annotations
+"""API publique du traducteur Syntakt."""
+from SyntaktTranslatorV3 import Session, format_analysis_fr
+from kb_scales import recommend_kb_scale
 
-from .translator import (
-    ANALYSIS_JSON_SCHEMA,
-    AnalysisResult,
-    MatchCandidate,
-    Session,
-    advise_keyboard_scale,
-    analyze_text,
-    format_analysis_fr,
-    format_for_syntakt,
-    get_doc,
-    get_session,
-    get_version,
-    normalize_input,
-)
-from .core import recommend_kb_scale
+__version__ = "3.x"
 
-__all__ = [
-    "Session",
-    "AnalysisResult",
-    "MatchCandidate",
-    "ANALYSIS_JSON_SCHEMA",
-    "analyze_text",
-    "advise_keyboard_scale",
-    "format_analysis_fr",
-    "format_for_syntakt",
-    "get_doc",
-    "get_session",
-    "get_version",
-    "normalize_input",
-    "recommend_kb_scale",
-]
+__all__ = ["Session", "format_analysis_fr", "recommend_kb_scale", "__version__"]
