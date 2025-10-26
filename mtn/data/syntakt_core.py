@@ -543,7 +543,7 @@ def rank_presets(
     return scored
 
 
-ENGINE_VERSION = "3.0"
+ENGINE_VERSION = "3.x"
 SCHEMA_VERSION = "2025.05"
 ANALYSIS_JSON_SCHEMA = {
     "title": "syntakt.analysis",
