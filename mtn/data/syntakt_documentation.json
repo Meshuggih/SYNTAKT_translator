@@ -2,6 +2,18 @@
   "version": "3.0",
   "last_updated": "2025-05-13",
   "sections": {
+    "Syntakt.csv": {
+      "description": "Source de vérité pour les presets SY CHORD.",
+      "colonnes": {
+        "PresetName": "Nom lisible du preset (ex: C major 2nd).",
+        "Type": "Catégorie SY CHORD attendue (major, m7b5, etc.).",
+        "Root": "Fondamentale en notation anglo-saxonne.",
+        "Intervals": "Intervalles empilés en demi-tons séparés par | (grave→aigu).",
+        "BAL": "Valeur entière associée au motif BAL officiel.",
+        "BALPattern": "Motif visuel (••••, •*••, etc.).",
+        "Labels": "Étiquettes additionnelles séparées par ; pour la validation."
+      }
+    },
     "SY CHORD — règles de mapping": {
       "options": {
         "strict": false,

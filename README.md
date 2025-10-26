@@ -24,6 +24,19 @@ result = session.analyze("G7")
 print(format_analysis_fr(result))
 ```
 
+Sortie typique :
+
+```
+Résultat :
+- Réglage recommandé : Root=G Preset=7 BAL=96 (••••)
+- Notes jouées : G3, B3, D4, F4
+- Qualité du match : exact (5★)
+- Alternatives top-k :
+  • 2★ Root=G Preset=major BAL=96 (••••)
+  • 1★ Root=G Preset=M6 BAL=96 (••••)
+  • 1★ Root=G Preset=Maj7 BAL=96 (••••)
+```
+
 Analyse d'une liste de notes (grave → aigu) :
 
 ```python
@@ -32,6 +45,10 @@ result = session.analyze("E A C", anchor_octave=2)
 for alt in result["alternatives"]:
     print(alt["stars"], alt["copy_line"])
 ```
+
+Dans cette configuration, la ligne copiable du meilleur candidat reste accessible
+via `result["best"]["copy_line"]` et l'ordre grave→aigu est préservé dans
+`result["best"]["notes_oct"]`.
 
 Chaque analyse retourne un dictionnaire contenant :
 

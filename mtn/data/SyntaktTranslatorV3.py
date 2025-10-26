@@ -13,7 +13,7 @@ from syntakt_core import (
     rank_presets,
 )
 
-__all__ = ["Session", "format_analysis_fr", "ANALYSIS_JSON_SCHEMA"]
+__all__ = ["Session", "format_analysis_fr"]
 
 
 @dataclass
