@@ -1,4 +1,421 @@
-sy_root,sy_type,bal,bal_pattern,intervals
-C,major,20,•••~,0|4|7
-C,minor,20,•••~,0|3|7
-A,minor,106,•*••,0|3|7
+PresetName,Type,Root,Intervals,BAL,BALPattern,Labels
+C major root,major,C,0|4|7,96,••••,triad;root
+C major 1st,major,C,4|7|12,84,•••.,triad;1st_inversion
+C major 2nd (106),major,C,7|12|16,106,•*••,triad;2nd_inversion;preferred
+C major 2nd (74),major,C,7|12|16,74,••..,triad;2nd_inversion;alt
+C minor root,minor,C,0|3|7,96,••••,triad;root
+C minor 1st,minor,C,3|7|12,84,•••.,triad;1st_inversion
+C minor 2nd (106),minor,C,7|12|15,106,•*••,triad;2nd_inversion;preferred
+C minor 2nd (74),minor,C,7|12|15,74,••..,triad;2nd_inversion;alt
+C diminished root,diminished,C,0|3|6,96,••••,triad;root
+C diminished 1st,diminished,C,3|6|12,84,•••.,triad;1st_inversion
+C diminished 2nd (106),diminished,C,6|12|15,106,•*••,triad;2nd_inversion;preferred
+C diminished 2nd (74),diminished,C,6|12|15,74,••..,triad;2nd_inversion;alt
+C augmented root,augmented,C,0|4|8,96,••••,triad;root
+C augmented 1st,augmented,C,4|8|12,84,•••.,triad;1st_inversion
+C augmented 2nd (106),augmented,C,8|12|16,106,•*••,triad;2nd_inversion;preferred
+C augmented 2nd (74),augmented,C,8|12|16,74,••..,triad;2nd_inversion;alt
+C sus2 root,sus2,C,0|2|7,96,••••,triad;root
+C sus2 1st,sus2,C,2|7|12,84,•••.,triad;1st_inversion
+C sus2 2nd (106),sus2,C,7|12|14,106,•*••,triad;2nd_inversion;preferred
+C sus2 2nd (74),sus2,C,7|12|14,74,••..,triad;2nd_inversion;alt
+C sus4 root,sus4,C,0|5|7,96,••••,triad;root
+C sus4 1st,sus4,C,5|7|12,84,•••.,triad;1st_inversion
+C sus4 2nd (106),sus4,C,7|12|17,106,•*••,triad;2nd_inversion;preferred
+C sus4 2nd (74),sus4,C,7|12|17,74,••..,triad;2nd_inversion;alt
+C Maj7 root,Maj7,C,0|4|7|11,96,••••,tetrad;root
+C 7 root,7,C,0|4|7|10,96,••••,tetrad;root
+C m7 root,m7,C,0|3|7|10,96,••••,tetrad;root
+C mMaj7 root,mMaj7,C,0|3|7|11,96,••••,tetrad;root
+C dim7 root,dim7,C,0|3|6|9,96,••••,tetrad;root
+C m7b5 root,m7b5,C,0|3|6|10,96,••••,tetrad;root
+C M6 root,M6,C,0|4|7|9,96,••••,tetrad;root
+C m6 root,m6,C,0|3|7|9,96,••••,tetrad;root
+C augM7 root,augM7,C,0|4|8|11,96,••••,tetrad;root
+C add9 root,add9,C,0|4|7|14,96,••••,tetrad;root
+C madd9 root,madd9,C,0|3|7|14,96,••••,tetrad;root
+C# major root,major,C#,0|4|7,96,••••,triad;root
+C# major 1st,major,C#,4|7|12,84,•••.,triad;1st_inversion
+C# major 2nd (106),major,C#,7|12|16,106,•*••,triad;2nd_inversion;preferred
+C# major 2nd (74),major,C#,7|12|16,74,••..,triad;2nd_inversion;alt
+C# minor root,minor,C#,0|3|7,96,••••,triad;root
+C# minor 1st,minor,C#,3|7|12,84,•••.,triad;1st_inversion
+C# minor 2nd (106),minor,C#,7|12|15,106,•*••,triad;2nd_inversion;preferred
+C# minor 2nd (74),minor,C#,7|12|15,74,••..,triad;2nd_inversion;alt
+C# diminished root,diminished,C#,0|3|6,96,••••,triad;root
+C# diminished 1st,diminished,C#,3|6|12,84,•••.,triad;1st_inversion
+C# diminished 2nd (106),diminished,C#,6|12|15,106,•*••,triad;2nd_inversion;preferred
+C# diminished 2nd (74),diminished,C#,6|12|15,74,••..,triad;2nd_inversion;alt
+C# augmented root,augmented,C#,0|4|8,96,••••,triad;root
+C# augmented 1st,augmented,C#,4|8|12,84,•••.,triad;1st_inversion
+C# augmented 2nd (106),augmented,C#,8|12|16,106,•*••,triad;2nd_inversion;preferred
+C# augmented 2nd (74),augmented,C#,8|12|16,74,••..,triad;2nd_inversion;alt
+C# sus2 root,sus2,C#,0|2|7,96,••••,triad;root
+C# sus2 1st,sus2,C#,2|7|12,84,•••.,triad;1st_inversion
+C# sus2 2nd (106),sus2,C#,7|12|14,106,•*••,triad;2nd_inversion;preferred
+C# sus2 2nd (74),sus2,C#,7|12|14,74,••..,triad;2nd_inversion;alt
+C# sus4 root,sus4,C#,0|5|7,96,••••,triad;root
+C# sus4 1st,sus4,C#,5|7|12,84,•••.,triad;1st_inversion
+C# sus4 2nd (106),sus4,C#,7|12|17,106,•*••,triad;2nd_inversion;preferred
+C# sus4 2nd (74),sus4,C#,7|12|17,74,••..,triad;2nd_inversion;alt
+C# Maj7 root,Maj7,C#,0|4|7|11,96,••••,tetrad;root
+C# 7 root,7,C#,0|4|7|10,96,••••,tetrad;root
+C# m7 root,m7,C#,0|3|7|10,96,••••,tetrad;root
+C# mMaj7 root,mMaj7,C#,0|3|7|11,96,••••,tetrad;root
+C# dim7 root,dim7,C#,0|3|6|9,96,••••,tetrad;root
+C# m7b5 root,m7b5,C#,0|3|6|10,96,••••,tetrad;root
+C# M6 root,M6,C#,0|4|7|9,96,••••,tetrad;root
+C# m6 root,m6,C#,0|3|7|9,96,••••,tetrad;root
+C# augM7 root,augM7,C#,0|4|8|11,96,••••,tetrad;root
+C# add9 root,add9,C#,0|4|7|14,96,••••,tetrad;root
+C# madd9 root,madd9,C#,0|3|7|14,96,••••,tetrad;root
+D major root,major,D,0|4|7,96,••••,triad;root
+D major 1st,major,D,4|7|12,84,•••.,triad;1st_inversion
+D major 2nd (106),major,D,7|12|16,106,•*••,triad;2nd_inversion;preferred
+D major 2nd (74),major,D,7|12|16,74,••..,triad;2nd_inversion;alt
+D minor root,minor,D,0|3|7,96,••••,triad;root
+D minor 1st,minor,D,3|7|12,84,•••.,triad;1st_inversion
+D minor 2nd (106),minor,D,7|12|15,106,•*••,triad;2nd_inversion;preferred
+D minor 2nd (74),minor,D,7|12|15,74,••..,triad;2nd_inversion;alt
+D diminished root,diminished,D,0|3|6,96,••••,triad;root
+D diminished 1st,diminished,D,3|6|12,84,•••.,triad;1st_inversion
+D diminished 2nd (106),diminished,D,6|12|15,106,•*••,triad;2nd_inversion;preferred
+D diminished 2nd (74),diminished,D,6|12|15,74,••..,triad;2nd_inversion;alt
+D augmented root,augmented,D,0|4|8,96,••••,triad;root
+D augmented 1st,augmented,D,4|8|12,84,•••.,triad;1st_inversion
+D augmented 2nd (106),augmented,D,8|12|16,106,•*••,triad;2nd_inversion;preferred
+D augmented 2nd (74),augmented,D,8|12|16,74,••..,triad;2nd_inversion;alt
+D sus2 root,sus2,D,0|2|7,96,••••,triad;root
+D sus2 1st,sus2,D,2|7|12,84,•••.,triad;1st_inversion
+D sus2 2nd (106),sus2,D,7|12|14,106,•*••,triad;2nd_inversion;preferred
+D sus2 2nd (74),sus2,D,7|12|14,74,••..,triad;2nd_inversion;alt
+D sus4 root,sus4,D,0|5|7,96,••••,triad;root
+D sus4 1st,sus4,D,5|7|12,84,•••.,triad;1st_inversion
+D sus4 2nd (106),sus4,D,7|12|17,106,•*••,triad;2nd_inversion;preferred
+D sus4 2nd (74),sus4,D,7|12|17,74,••..,triad;2nd_inversion;alt
+D Maj7 root,Maj7,D,0|4|7|11,96,••••,tetrad;root
+D 7 root,7,D,0|4|7|10,96,••••,tetrad;root
+D m7 root,m7,D,0|3|7|10,96,••••,tetrad;root
+D mMaj7 root,mMaj7,D,0|3|7|11,96,••••,tetrad;root
+D dim7 root,dim7,D,0|3|6|9,96,••••,tetrad;root
+D m7b5 root,m7b5,D,0|3|6|10,96,••••,tetrad;root
+D M6 root,M6,D,0|4|7|9,96,••••,tetrad;root
+D m6 root,m6,D,0|3|7|9,96,••••,tetrad;root
+D augM7 root,augM7,D,0|4|8|11,96,••••,tetrad;root
+D add9 root,add9,D,0|4|7|14,96,••••,tetrad;root
+D madd9 root,madd9,D,0|3|7|14,96,••••,tetrad;root
+D# major root,major,D#,0|4|7,96,••••,triad;root
+D# major 1st,major,D#,4|7|12,84,•••.,triad;1st_inversion
+D# major 2nd (106),major,D#,7|12|16,106,•*••,triad;2nd_inversion;preferred
+D# major 2nd (74),major,D#,7|12|16,74,••..,triad;2nd_inversion;alt
+D# minor root,minor,D#,0|3|7,96,••••,triad;root
+D# minor 1st,minor,D#,3|7|12,84,•••.,triad;1st_inversion
+D# minor 2nd (106),minor,D#,7|12|15,106,•*••,triad;2nd_inversion;preferred
+D# minor 2nd (74),minor,D#,7|12|15,74,••..,triad;2nd_inversion;alt
+D# diminished root,diminished,D#,0|3|6,96,••••,triad;root
+D# diminished 1st,diminished,D#,3|6|12,84,•••.,triad;1st_inversion
+D# diminished 2nd (106),diminished,D#,6|12|15,106,•*••,triad;2nd_inversion;preferred
+D# diminished 2nd (74),diminished,D#,6|12|15,74,••..,triad;2nd_inversion;alt
+D# augmented root,augmented,D#,0|4|8,96,••••,triad;root
+D# augmented 1st,augmented,D#,4|8|12,84,•••.,triad;1st_inversion
+D# augmented 2nd (106),augmented,D#,8|12|16,106,•*••,triad;2nd_inversion;preferred
+D# augmented 2nd (74),augmented,D#,8|12|16,74,••..,triad;2nd_inversion;alt
+D# sus2 root,sus2,D#,0|2|7,96,••••,triad;root
+D# sus2 1st,sus2,D#,2|7|12,84,•••.,triad;1st_inversion
+D# sus2 2nd (106),sus2,D#,7|12|14,106,•*••,triad;2nd_inversion;preferred
+D# sus2 2nd (74),sus2,D#,7|12|14,74,••..,triad;2nd_inversion;alt
+D# sus4 root,sus4,D#,0|5|7,96,••••,triad;root
+D# sus4 1st,sus4,D#,5|7|12,84,•••.,triad;1st_inversion
+D# sus4 2nd (106),sus4,D#,7|12|17,106,•*••,triad;2nd_inversion;preferred
+D# sus4 2nd (74),sus4,D#,7|12|17,74,••..,triad;2nd_inversion;alt
+D# Maj7 root,Maj7,D#,0|4|7|11,96,••••,tetrad;root
+D# 7 root,7,D#,0|4|7|10,96,••••,tetrad;root
+D# m7 root,m7,D#,0|3|7|10,96,••••,tetrad;root
+D# mMaj7 root,mMaj7,D#,0|3|7|11,96,••••,tetrad;root
+D# dim7 root,dim7,D#,0|3|6|9,96,••••,tetrad;root
+D# m7b5 root,m7b5,D#,0|3|6|10,96,••••,tetrad;root
+D# M6 root,M6,D#,0|4|7|9,96,••••,tetrad;root
+D# m6 root,m6,D#,0|3|7|9,96,••••,tetrad;root
+D# augM7 root,augM7,D#,0|4|8|11,96,••••,tetrad;root
+D# add9 root,add9,D#,0|4|7|14,96,••••,tetrad;root
+D# madd9 root,madd9,D#,0|3|7|14,96,••••,tetrad;root
+E major root,major,E,0|4|7,96,••••,triad;root
+E major 1st,major,E,4|7|12,84,•••.,triad;1st_inversion
+E major 2nd (106),major,E,7|12|16,106,•*••,triad;2nd_inversion;preferred
+E major 2nd (74),major,E,7|12|16,74,••..,triad;2nd_inversion;alt
+E minor root,minor,E,0|3|7,96,••••,triad;root
+E minor 1st,minor,E,3|7|12,84,•••.,triad;1st_inversion
+E minor 2nd (106),minor,E,7|12|15,106,•*••,triad;2nd_inversion;preferred
+E minor 2nd (74),minor,E,7|12|15,74,••..,triad;2nd_inversion;alt
+E diminished root,diminished,E,0|3|6,96,••••,triad;root
+E diminished 1st,diminished,E,3|6|12,84,•••.,triad;1st_inversion
+E diminished 2nd (106),diminished,E,6|12|15,106,•*••,triad;2nd_inversion;preferred
+E diminished 2nd (74),diminished,E,6|12|15,74,••..,triad;2nd_inversion;alt
+E augmented root,augmented,E,0|4|8,96,••••,triad;root
+E augmented 1st,augmented,E,4|8|12,84,•••.,triad;1st_inversion
+E augmented 2nd (106),augmented,E,8|12|16,106,•*••,triad;2nd_inversion;preferred
+E augmented 2nd (74),augmented,E,8|12|16,74,••..,triad;2nd_inversion;alt
+E sus2 root,sus2,E,0|2|7,96,••••,triad;root
+E sus2 1st,sus2,E,2|7|12,84,•••.,triad;1st_inversion
+E sus2 2nd (106),sus2,E,7|12|14,106,•*••,triad;2nd_inversion;preferred
+E sus2 2nd (74),sus2,E,7|12|14,74,••..,triad;2nd_inversion;alt
+E sus4 root,sus4,E,0|5|7,96,••••,triad;root
+E sus4 1st,sus4,E,5|7|12,84,•••.,triad;1st_inversion
+E sus4 2nd (106),sus4,E,7|12|17,106,•*••,triad;2nd_inversion;preferred
+E sus4 2nd (74),sus4,E,7|12|17,74,••..,triad;2nd_inversion;alt
+E Maj7 root,Maj7,E,0|4|7|11,96,••••,tetrad;root
+E 7 root,7,E,0|4|7|10,96,••••,tetrad;root
+E m7 root,m7,E,0|3|7|10,96,••••,tetrad;root
+E mMaj7 root,mMaj7,E,0|3|7|11,96,••••,tetrad;root
+E dim7 root,dim7,E,0|3|6|9,96,••••,tetrad;root
+E m7b5 root,m7b5,E,0|3|6|10,96,••••,tetrad;root
+E M6 root,M6,E,0|4|7|9,96,••••,tetrad;root
+E m6 root,m6,E,0|3|7|9,96,••••,tetrad;root
+E augM7 root,augM7,E,0|4|8|11,96,••••,tetrad;root
+E add9 root,add9,E,0|4|7|14,96,••••,tetrad;root
+E madd9 root,madd9,E,0|3|7|14,96,••••,tetrad;root
+F major root,major,F,0|4|7,96,••••,triad;root
+F major 1st,major,F,4|7|12,84,•••.,triad;1st_inversion
+F major 2nd (106),major,F,7|12|16,106,•*••,triad;2nd_inversion;preferred
+F major 2nd (74),major,F,7|12|16,74,••..,triad;2nd_inversion;alt
+F minor root,minor,F,0|3|7,96,••••,triad;root
+F minor 1st,minor,F,3|7|12,84,•••.,triad;1st_inversion
+F minor 2nd (106),minor,F,7|12|15,106,•*••,triad;2nd_inversion;preferred
+F minor 2nd (74),minor,F,7|12|15,74,••..,triad;2nd_inversion;alt
+F diminished root,diminished,F,0|3|6,96,••••,triad;root
+F diminished 1st,diminished,F,3|6|12,84,•••.,triad;1st_inversion
+F diminished 2nd (106),diminished,F,6|12|15,106,•*••,triad;2nd_inversion;preferred
+F diminished 2nd (74),diminished,F,6|12|15,74,••..,triad;2nd_inversion;alt
+F augmented root,augmented,F,0|4|8,96,••••,triad;root
+F augmented 1st,augmented,F,4|8|12,84,•••.,triad;1st_inversion
+F augmented 2nd (106),augmented,F,8|12|16,106,•*••,triad;2nd_inversion;preferred
+F augmented 2nd (74),augmented,F,8|12|16,74,••..,triad;2nd_inversion;alt
+F sus2 root,sus2,F,0|2|7,96,••••,triad;root
+F sus2 1st,sus2,F,2|7|12,84,•••.,triad;1st_inversion
+F sus2 2nd (106),sus2,F,7|12|14,106,•*••,triad;2nd_inversion;preferred
+F sus2 2nd (74),sus2,F,7|12|14,74,••..,triad;2nd_inversion;alt
+F sus4 root,sus4,F,0|5|7,96,••••,triad;root
+F sus4 1st,sus4,F,5|7|12,84,•••.,triad;1st_inversion
+F sus4 2nd (106),sus4,F,7|12|17,106,•*••,triad;2nd_inversion;preferred
+F sus4 2nd (74),sus4,F,7|12|17,74,••..,triad;2nd_inversion;alt
+F Maj7 root,Maj7,F,0|4|7|11,96,••••,tetrad;root
+F 7 root,7,F,0|4|7|10,96,••••,tetrad;root
+F m7 root,m7,F,0|3|7|10,96,••••,tetrad;root
+F mMaj7 root,mMaj7,F,0|3|7|11,96,••••,tetrad;root
+F dim7 root,dim7,F,0|3|6|9,96,••••,tetrad;root
+F m7b5 root,m7b5,F,0|3|6|10,96,••••,tetrad;root
+F M6 root,M6,F,0|4|7|9,96,••••,tetrad;root
+F m6 root,m6,F,0|3|7|9,96,••••,tetrad;root
+F augM7 root,augM7,F,0|4|8|11,96,••••,tetrad;root
+F add9 root,add9,F,0|4|7|14,96,••••,tetrad;root
+F madd9 root,madd9,F,0|3|7|14,96,••••,tetrad;root
+F# major root,major,F#,0|4|7,96,••••,triad;root
+F# major 1st,major,F#,4|7|12,84,•••.,triad;1st_inversion
+F# major 2nd (106),major,F#,7|12|16,106,•*••,triad;2nd_inversion;preferred
+F# major 2nd (74),major,F#,7|12|16,74,••..,triad;2nd_inversion;alt
+F# minor root,minor,F#,0|3|7,96,••••,triad;root
+F# minor 1st,minor,F#,3|7|12,84,•••.,triad;1st_inversion
+F# minor 2nd (106),minor,F#,7|12|15,106,•*••,triad;2nd_inversion;preferred
+F# minor 2nd (74),minor,F#,7|12|15,74,••..,triad;2nd_inversion;alt
+F# diminished root,diminished,F#,0|3|6,96,••••,triad;root
+F# diminished 1st,diminished,F#,3|6|12,84,•••.,triad;1st_inversion
+F# diminished 2nd (106),diminished,F#,6|12|15,106,•*••,triad;2nd_inversion;preferred
+F# diminished 2nd (74),diminished,F#,6|12|15,74,••..,triad;2nd_inversion;alt
+F# augmented root,augmented,F#,0|4|8,96,••••,triad;root
+F# augmented 1st,augmented,F#,4|8|12,84,•••.,triad;1st_inversion
+F# augmented 2nd (106),augmented,F#,8|12|16,106,•*••,triad;2nd_inversion;preferred
+F# augmented 2nd (74),augmented,F#,8|12|16,74,••..,triad;2nd_inversion;alt
+F# sus2 root,sus2,F#,0|2|7,96,••••,triad;root
+F# sus2 1st,sus2,F#,2|7|12,84,•••.,triad;1st_inversion
+F# sus2 2nd (106),sus2,F#,7|12|14,106,•*••,triad;2nd_inversion;preferred
+F# sus2 2nd (74),sus2,F#,7|12|14,74,••..,triad;2nd_inversion;alt
+F# sus4 root,sus4,F#,0|5|7,96,••••,triad;root
+F# sus4 1st,sus4,F#,5|7|12,84,•••.,triad;1st_inversion
+F# sus4 2nd (106),sus4,F#,7|12|17,106,•*••,triad;2nd_inversion;preferred
+F# sus4 2nd (74),sus4,F#,7|12|17,74,••..,triad;2nd_inversion;alt
+F# Maj7 root,Maj7,F#,0|4|7|11,96,••••,tetrad;root
+F# 7 root,7,F#,0|4|7|10,96,••••,tetrad;root
+F# m7 root,m7,F#,0|3|7|10,96,••••,tetrad;root
+F# mMaj7 root,mMaj7,F#,0|3|7|11,96,••••,tetrad;root
+F# dim7 root,dim7,F#,0|3|6|9,96,••••,tetrad;root
+F# m7b5 root,m7b5,F#,0|3|6|10,96,••••,tetrad;root
+F# M6 root,M6,F#,0|4|7|9,96,••••,tetrad;root
+F# m6 root,m6,F#,0|3|7|9,96,••••,tetrad;root
+F# augM7 root,augM7,F#,0|4|8|11,96,••••,tetrad;root
+F# add9 root,add9,F#,0|4|7|14,96,••••,tetrad;root
+F# madd9 root,madd9,F#,0|3|7|14,96,••••,tetrad;root
+G major root,major,G,0|4|7,96,••••,triad;root
+G major 1st,major,G,4|7|12,84,•••.,triad;1st_inversion
+G major 2nd (106),major,G,7|12|16,106,•*••,triad;2nd_inversion;preferred
+G major 2nd (74),major,G,7|12|16,74,••..,triad;2nd_inversion;alt
+G minor root,minor,G,0|3|7,96,••••,triad;root
+G minor 1st,minor,G,3|7|12,84,•••.,triad;1st_inversion
+G minor 2nd (106),minor,G,7|12|15,106,•*••,triad;2nd_inversion;preferred
+G minor 2nd (74),minor,G,7|12|15,74,••..,triad;2nd_inversion;alt
+G diminished root,diminished,G,0|3|6,96,••••,triad;root
+G diminished 1st,diminished,G,3|6|12,84,•••.,triad;1st_inversion
+G diminished 2nd (106),diminished,G,6|12|15,106,•*••,triad;2nd_inversion;preferred
+G diminished 2nd (74),diminished,G,6|12|15,74,••..,triad;2nd_inversion;alt
+G augmented root,augmented,G,0|4|8,96,••••,triad;root
+G augmented 1st,augmented,G,4|8|12,84,•••.,triad;1st_inversion
+G augmented 2nd (106),augmented,G,8|12|16,106,•*••,triad;2nd_inversion;preferred
+G augmented 2nd (74),augmented,G,8|12|16,74,••..,triad;2nd_inversion;alt
+G sus2 root,sus2,G,0|2|7,96,••••,triad;root
+G sus2 1st,sus2,G,2|7|12,84,•••.,triad;1st_inversion
+G sus2 2nd (106),sus2,G,7|12|14,106,•*••,triad;2nd_inversion;preferred
+G sus2 2nd (74),sus2,G,7|12|14,74,••..,triad;2nd_inversion;alt
+G sus4 root,sus4,G,0|5|7,96,••••,triad;root
+G sus4 1st,sus4,G,5|7|12,84,•••.,triad;1st_inversion
+G sus4 2nd (106),sus4,G,7|12|17,106,•*••,triad;2nd_inversion;preferred
+G sus4 2nd (74),sus4,G,7|12|17,74,••..,triad;2nd_inversion;alt
+G Maj7 root,Maj7,G,0|4|7|11,96,••••,tetrad;root
+G 7 root,7,G,0|4|7|10,96,••••,tetrad;root
+G m7 root,m7,G,0|3|7|10,96,••••,tetrad;root
+G mMaj7 root,mMaj7,G,0|3|7|11,96,••••,tetrad;root
+G dim7 root,dim7,G,0|3|6|9,96,••••,tetrad;root
+G m7b5 root,m7b5,G,0|3|6|10,96,••••,tetrad;root
+G M6 root,M6,G,0|4|7|9,96,••••,tetrad;root
+G m6 root,m6,G,0|3|7|9,96,••••,tetrad;root
+G augM7 root,augM7,G,0|4|8|11,96,••••,tetrad;root
+G add9 root,add9,G,0|4|7|14,96,••••,tetrad;root
+G madd9 root,madd9,G,0|3|7|14,96,••••,tetrad;root
+G# major root,major,G#,0|4|7,96,••••,triad;root
+G# major 1st,major,G#,4|7|12,84,•••.,triad;1st_inversion
+G# major 2nd (106),major,G#,7|12|16,106,•*••,triad;2nd_inversion;preferred
+G# major 2nd (74),major,G#,7|12|16,74,••..,triad;2nd_inversion;alt
+G# minor root,minor,G#,0|3|7,96,••••,triad;root
+G# minor 1st,minor,G#,3|7|12,84,•••.,triad;1st_inversion
+G# minor 2nd (106),minor,G#,7|12|15,106,•*••,triad;2nd_inversion;preferred
+G# minor 2nd (74),minor,G#,7|12|15,74,••..,triad;2nd_inversion;alt
+G# diminished root,diminished,G#,0|3|6,96,••••,triad;root
+G# diminished 1st,diminished,G#,3|6|12,84,•••.,triad;1st_inversion
+G# diminished 2nd (106),diminished,G#,6|12|15,106,•*••,triad;2nd_inversion;preferred
+G# diminished 2nd (74),diminished,G#,6|12|15,74,••..,triad;2nd_inversion;alt
+G# augmented root,augmented,G#,0|4|8,96,••••,triad;root
+G# augmented 1st,augmented,G#,4|8|12,84,•••.,triad;1st_inversion
+G# augmented 2nd (106),augmented,G#,8|12|16,106,•*••,triad;2nd_inversion;preferred
+G# augmented 2nd (74),augmented,G#,8|12|16,74,••..,triad;2nd_inversion;alt
+G# sus2 root,sus2,G#,0|2|7,96,••••,triad;root
+G# sus2 1st,sus2,G#,2|7|12,84,•••.,triad;1st_inversion
+G# sus2 2nd (106),sus2,G#,7|12|14,106,•*••,triad;2nd_inversion;preferred
+G# sus2 2nd (74),sus2,G#,7|12|14,74,••..,triad;2nd_inversion;alt
+G# sus4 root,sus4,G#,0|5|7,96,••••,triad;root
+G# sus4 1st,sus4,G#,5|7|12,84,•••.,triad;1st_inversion
+G# sus4 2nd (106),sus4,G#,7|12|17,106,•*••,triad;2nd_inversion;preferred
+G# sus4 2nd (74),sus4,G#,7|12|17,74,••..,triad;2nd_inversion;alt
+G# Maj7 root,Maj7,G#,0|4|7|11,96,••••,tetrad;root
+G# 7 root,7,G#,0|4|7|10,96,••••,tetrad;root
+G# m7 root,m7,G#,0|3|7|10,96,••••,tetrad;root
+G# mMaj7 root,mMaj7,G#,0|3|7|11,96,••••,tetrad;root
+G# dim7 root,dim7,G#,0|3|6|9,96,••••,tetrad;root
+G# m7b5 root,m7b5,G#,0|3|6|10,96,••••,tetrad;root
+G# M6 root,M6,G#,0|4|7|9,96,••••,tetrad;root
+G# m6 root,m6,G#,0|3|7|9,96,••••,tetrad;root
+G# augM7 root,augM7,G#,0|4|8|11,96,••••,tetrad;root
+G# add9 root,add9,G#,0|4|7|14,96,••••,tetrad;root
+G# madd9 root,madd9,G#,0|3|7|14,96,••••,tetrad;root
+A major root,major,A,0|4|7,96,••••,triad;root
+A major 1st,major,A,4|7|12,84,•••.,triad;1st_inversion
+A major 2nd (106),major,A,7|12|16,106,•*••,triad;2nd_inversion;preferred
+A major 2nd (74),major,A,7|12|16,74,••..,triad;2nd_inversion;alt
+A minor root,minor,A,0|3|7,96,••••,triad;root
+A minor 1st,minor,A,3|7|12,84,•••.,triad;1st_inversion
+A minor 2nd (106),minor,A,7|12|15,106,•*••,triad;2nd_inversion;preferred
+A minor 2nd (74),minor,A,7|12|15,74,••..,triad;2nd_inversion;alt
+A diminished root,diminished,A,0|3|6,96,••••,triad;root
+A diminished 1st,diminished,A,3|6|12,84,•••.,triad;1st_inversion
+A diminished 2nd (106),diminished,A,6|12|15,106,•*••,triad;2nd_inversion;preferred
+A diminished 2nd (74),diminished,A,6|12|15,74,••..,triad;2nd_inversion;alt
+A augmented root,augmented,A,0|4|8,96,••••,triad;root
+A augmented 1st,augmented,A,4|8|12,84,•••.,triad;1st_inversion
+A augmented 2nd (106),augmented,A,8|12|16,106,•*••,triad;2nd_inversion;preferred
+A augmented 2nd (74),augmented,A,8|12|16,74,••..,triad;2nd_inversion;alt
+A sus2 root,sus2,A,0|2|7,96,••••,triad;root
+A sus2 1st,sus2,A,2|7|12,84,•••.,triad;1st_inversion
+A sus2 2nd (106),sus2,A,7|12|14,106,•*••,triad;2nd_inversion;preferred
+A sus2 2nd (74),sus2,A,7|12|14,74,••..,triad;2nd_inversion;alt
+A sus4 root,sus4,A,0|5|7,96,••••,triad;root
+A sus4 1st,sus4,A,5|7|12,84,•••.,triad;1st_inversion
+A sus4 2nd (106),sus4,A,7|12|17,106,•*••,triad;2nd_inversion;preferred
+A sus4 2nd (74),sus4,A,7|12|17,74,••..,triad;2nd_inversion;alt
+A Maj7 root,Maj7,A,0|4|7|11,96,••••,tetrad;root
+A 7 root,7,A,0|4|7|10,96,••••,tetrad;root
+A m7 root,m7,A,0|3|7|10,96,••••,tetrad;root
+A mMaj7 root,mMaj7,A,0|3|7|11,96,••••,tetrad;root
+A dim7 root,dim7,A,0|3|6|9,96,••••,tetrad;root
+A m7b5 root,m7b5,A,0|3|6|10,96,••••,tetrad;root
+A M6 root,M6,A,0|4|7|9,96,••••,tetrad;root
+A m6 root,m6,A,0|3|7|9,96,••••,tetrad;root
+A augM7 root,augM7,A,0|4|8|11,96,••••,tetrad;root
+A add9 root,add9,A,0|4|7|14,96,••••,tetrad;root
+A madd9 root,madd9,A,0|3|7|14,96,••••,tetrad;root
+A# major root,major,A#,0|4|7,96,••••,triad;root
+A# major 1st,major,A#,4|7|12,84,•••.,triad;1st_inversion
+A# major 2nd (106),major,A#,7|12|16,106,•*••,triad;2nd_inversion;preferred
+A# major 2nd (74),major,A#,7|12|16,74,••..,triad;2nd_inversion;alt
+A# minor root,minor,A#,0|3|7,96,••••,triad;root
+A# minor 1st,minor,A#,3|7|12,84,•••.,triad;1st_inversion
+A# minor 2nd (106),minor,A#,7|12|15,106,•*••,triad;2nd_inversion;preferred
+A# minor 2nd (74),minor,A#,7|12|15,74,••..,triad;2nd_inversion;alt
+A# diminished root,diminished,A#,0|3|6,96,••••,triad;root
+A# diminished 1st,diminished,A#,3|6|12,84,•••.,triad;1st_inversion
+A# diminished 2nd (106),diminished,A#,6|12|15,106,•*••,triad;2nd_inversion;preferred
+A# diminished 2nd (74),diminished,A#,6|12|15,74,••..,triad;2nd_inversion;alt
+A# augmented root,augmented,A#,0|4|8,96,••••,triad;root
+A# augmented 1st,augmented,A#,4|8|12,84,•••.,triad;1st_inversion
+A# augmented 2nd (106),augmented,A#,8|12|16,106,•*••,triad;2nd_inversion;preferred
+A# augmented 2nd (74),augmented,A#,8|12|16,74,••..,triad;2nd_inversion;alt
+A# sus2 root,sus2,A#,0|2|7,96,••••,triad;root
+A# sus2 1st,sus2,A#,2|7|12,84,•••.,triad;1st_inversion
+A# sus2 2nd (106),sus2,A#,7|12|14,106,•*••,triad;2nd_inversion;preferred
+A# sus2 2nd (74),sus2,A#,7|12|14,74,••..,triad;2nd_inversion;alt
+A# sus4 root,sus4,A#,0|5|7,96,••••,triad;root
+A# sus4 1st,sus4,A#,5|7|12,84,•••.,triad;1st_inversion
+A# sus4 2nd (106),sus4,A#,7|12|17,106,•*••,triad;2nd_inversion;preferred
+A# sus4 2nd (74),sus4,A#,7|12|17,74,••..,triad;2nd_inversion;alt
+A# Maj7 root,Maj7,A#,0|4|7|11,96,••••,tetrad;root
+A# 7 root,7,A#,0|4|7|10,96,••••,tetrad;root
+A# m7 root,m7,A#,0|3|7|10,96,••••,tetrad;root
+A# mMaj7 root,mMaj7,A#,0|3|7|11,96,••••,tetrad;root
+A# dim7 root,dim7,A#,0|3|6|9,96,••••,tetrad;root
+A# m7b5 root,m7b5,A#,0|3|6|10,96,••••,tetrad;root
+A# M6 root,M6,A#,0|4|7|9,96,••••,tetrad;root
+A# m6 root,m6,A#,0|3|7|9,96,••••,tetrad;root
+A# augM7 root,augM7,A#,0|4|8|11,96,••••,tetrad;root
+A# add9 root,add9,A#,0|4|7|14,96,••••,tetrad;root
+A# madd9 root,madd9,A#,0|3|7|14,96,••••,tetrad;root
+B major root,major,B,0|4|7,96,••••,triad;root
+B major 1st,major,B,4|7|12,84,•••.,triad;1st_inversion
+B major 2nd (106),major,B,7|12|16,106,•*••,triad;2nd_inversion;preferred
+B major 2nd (74),major,B,7|12|16,74,••..,triad;2nd_inversion;alt
+B minor root,minor,B,0|3|7,96,••••,triad;root
+B minor 1st,minor,B,3|7|12,84,•••.,triad;1st_inversion
+B minor 2nd (106),minor,B,7|12|15,106,•*••,triad;2nd_inversion;preferred
+B minor 2nd (74),minor,B,7|12|15,74,••..,triad;2nd_inversion;alt
+B diminished root,diminished,B,0|3|6,96,••••,triad;root
+B diminished 1st,diminished,B,3|6|12,84,•••.,triad;1st_inversion
+B diminished 2nd (106),diminished,B,6|12|15,106,•*••,triad;2nd_inversion;preferred
+B diminished 2nd (74),diminished,B,6|12|15,74,••..,triad;2nd_inversion;alt
+B augmented root,augmented,B,0|4|8,96,••••,triad;root
+B augmented 1st,augmented,B,4|8|12,84,•••.,triad;1st_inversion
+B augmented 2nd (106),augmented,B,8|12|16,106,•*••,triad;2nd_inversion;preferred
+B augmented 2nd (74),augmented,B,8|12|16,74,••..,triad;2nd_inversion;alt
+B sus2 root,sus2,B,0|2|7,96,••••,triad;root
+B sus2 1st,sus2,B,2|7|12,84,•••.,triad;1st_inversion
+B sus2 2nd (106),sus2,B,7|12|14,106,•*••,triad;2nd_inversion;preferred
+B sus2 2nd (74),sus2,B,7|12|14,74,••..,triad;2nd_inversion;alt
+B sus4 root,sus4,B,0|5|7,96,••••,triad;root
+B sus4 1st,sus4,B,5|7|12,84,•••.,triad;1st_inversion
+B sus4 2nd (106),sus4,B,7|12|17,106,•*••,triad;2nd_inversion;preferred
+B sus4 2nd (74),sus4,B,7|12|17,74,••..,triad;2nd_inversion;alt
+B Maj7 root,Maj7,B,0|4|7|11,96,••••,tetrad;root
+B 7 root,7,B,0|4|7|10,96,••••,tetrad;root
+B m7 root,m7,B,0|3|7|10,96,••••,tetrad;root
+B mMaj7 root,mMaj7,B,0|3|7|11,96,••••,tetrad;root
+B dim7 root,dim7,B,0|3|6|9,96,••••,tetrad;root
+B m7b5 root,m7b5,B,0|3|6|10,96,••••,tetrad;root
+B M6 root,M6,B,0|4|7|9,96,••••,tetrad;root
+B m6 root,m6,B,0|3|7|9,96,••••,tetrad;root
+B augM7 root,augM7,B,0|4|8|11,96,••••,tetrad;root
+B add9 root,add9,B,0|4|7|14,96,••••,tetrad;root
+B madd9 root,madd9,B,0|3|7|14,96,••••,tetrad;root
