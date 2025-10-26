@@ -1,7 +1,4 @@
-"""Compatibility module forwarding to :mod:`sychord.core`."""
+"""Compatibilité ascendante pour les modules historiques."""
 from __future__ import annotations
 
-try:  # pragma: no cover
-    from ..sychord.core import *  # type: ignore F401,F403
-except Exception:  # pragma: no cover
-    from sychord.core import *  # type: ignore F401,F403
+from .core import *  # noqa: F401,F403 - réexport intentionnel

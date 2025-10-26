@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 
-from sychord import (
+from mtn.data import (
     ANALYSIS_JSON_SCHEMA,
     Session,
     advise_keyboard_scale,
@@ -11,7 +11,7 @@ from sychord import (
     format_for_syntakt,
     normalize_input,
 )
-from sychord.core import voices_with_octaves
+from mtn.data.core import voices_with_octaves
 
 
 def test_analyze_symbol_returns_best_candidate():

@@ -1,11 +1,34 @@
-"""Compat shim re-exporting the modern :mod:`sychord` package."""
+"""Bibliothèque principale pour l'analyseur Syntakt."""
 from __future__ import annotations
 
-try:  # pragma: no cover - compatibility path
-    from ..sychord import Session, format_analysis_fr
-    from ..sychord.core import recommend_kb_scale
-except Exception:  # pragma: no cover
-    from sychord import Session, format_analysis_fr  # type: ignore
-    from sychord.core import recommend_kb_scale  # type: ignore
+from .translator import (
+    ANALYSIS_JSON_SCHEMA,
+    AnalysisResult,
+    MatchCandidate,
+    Session,
+    advise_keyboard_scale,
+    analyze_text,
+    format_analysis_fr,
+    format_for_syntakt,
+    get_doc,
+    get_session,
+    get_version,
+    normalize_input,
+)
+from .core import recommend_kb_scale
 
-__all__ = ["Session", "format_analysis_fr", "recommend_kb_scale"]
+__all__ = [
+    "Session",
+    "AnalysisResult",
+    "MatchCandidate",
+    "ANALYSIS_JSON_SCHEMA",
+    "analyze_text",
+    "advise_keyboard_scale",
+    "format_analysis_fr",
+    "format_for_syntakt",
+    "get_doc",
+    "get_session",
+    "get_version",
+    "normalize_input",
+    "recommend_kb_scale",
+]
