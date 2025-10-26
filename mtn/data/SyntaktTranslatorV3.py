@@ -2,7 +2,7 @@
 """Syntakt SY CHORD translator with optional Pythonista UI glue."""
 from __future__ import annotations
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Sequence, List
 
 try:  # Optional Pythonista-only modules
     import ui  # type: ignore
@@ -17,7 +17,9 @@ except Exception:  # pragma: no cover - absent on headless environments
 
 from .syntakt_core import (
     Session,
+    aggregated_chord_pcs_from_results,
     format_analysis_fr,
+    recommend_kb_scale,
 )
 
 __all__ = [
@@ -26,6 +28,7 @@ __all__ = [
     "analyze_text",
     "get_session",
     "has_pythonista_ui",
+    "advise_keyboard_scale",
 ]
 
 
@@ -43,6 +46,20 @@ def get_session() -> Session:
 def analyze_text(input_text: str, **options: Any) -> Dict[str, Any]:
     """Convenience helper returning ``Session().analyze`` with shared cache."""
     return get_session().analyze(input_text, **options)
+
+
+def advise_keyboard_scale(symbols: Sequence[str], policy: str = "safe") -> List[Dict[str, Any]]:
+    """Return top keyboard scale recommendations for a chord progression."""
+
+    session = get_session()
+    analyses = [session.analyze(sym) for sym in symbols]
+    pcs = aggregated_chord_pcs_from_results(analyses)
+    top = recommend_kb_scale(pcs, policy=policy)
+    names = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+    return [
+        {"kb_scale": scale, "root": names[root_pc], "score": round(score, 3)}
+        for (scale, root_pc, score) in top
+    ]
 
 
 def has_pythonista_ui() -> bool:

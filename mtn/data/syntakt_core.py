@@ -6,6 +6,8 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 import math
 import re
 
+from .kb_scales import recommend_kb_scale
+
 __all__ = [
     "NOTE_VALUES",
     "VALUES_TO_NOTES",
@@ -20,6 +22,8 @@ __all__ = [
     "list_matches_notes",
     "Session",
     "format_analysis_fr",
+    "aggregated_chord_pcs_from_results",
+    "recommend_kb_scale",
 ]
 
 # ---------------------- Notes & Normalisation ----------------------
@@ -154,14 +158,14 @@ CHORD_INTERVALS: Dict[str, List[int]] = {
     "sus4": [0, 5, 7],
     # --- Tétra des ---
     "m7": [0, 3, 7, 10],
-    "7": [0, 4, 7, 10],
+    "M7": [0, 4, 7, 10],
     "Maj7": [0, 4, 7, 11],
     "mMaj7": [0, 3, 7, 11],
     "7sus4": [0, 5, 7, 10],
     "dim7": [0, 3, 6, 9],
     # --- Variantes ---
-    "madd9": [0, 2, 3, 7],
-    "Madd9": [0, 2, 4, 7],
+    "madd9": [0, 3, 7, 14],
+    "Madd9": [0, 4, 7, 14],
     "m6": [0, 3, 7, 9],
     "M6": [0, 4, 7, 9],
     "mb5": [0, 3, 6],
@@ -173,16 +177,16 @@ CHORD_INTERVALS: Dict[str, List[int]] = {
     "M7#5": [0, 4, 8, 10],
     "mb6": [0, 3, 8],
     "m9no5": [0, 2, 3, 10],
-    "M9no5": [0, 2, 4, 10],
+    "M9no5": [0, 4, 10, 14],
     "Madd9b5": [0, 2, 4, 6],
     "Maj7b5": [0, 4, 6, 11],
-    "M7b9no5": [0, 1, 4, 10],
+    "M7b9no5": [0, 4, 10, 13],
     "sus4#5b9": [0, 1, 5, 8],
     "sus4add#5": [0, 5, 7, 8],
     "Maddb5": [0, 4, 6, 7],
     "M6add4no5": [0, 4, 5, 9],
     "Maj7/6no5": [0, 4, 9],
-    "Maj9no5": [0, 2, 4, 11],
+    "Maj9no5": [0, 4, 11, 14],
 }
 
 BAL_PATTERNS: Dict[int, str] = {
@@ -234,16 +238,42 @@ def _pattern_to_oct(pattern: str, nvoices: int) -> List[Optional[int]]:
     return out[:nvoices]
 
 
+def _octify_extension_offsets(sy_type: str, offsets: Sequence[int]) -> List[int]:
+    """Ensure extensions (9/11/13) are voiced above the octave when requested."""
+
+    lowered = sy_type.lower()
+    if not any(tag in lowered for tag in ("9", "11", "13")):
+        return list(offsets)
+
+    extension_classes = {
+        "9": {1, 2, 3},  # b9, 9, #9
+        "11": {5, 6},  # 11, #11
+        "13": {8, 9, 10},  # b13, 13, #13
+    }
+
+    adjusted: List[int] = []
+    for idx, off in enumerate(offsets):
+        new_off = off
+        if off < 12 and idx >= 3:
+            for tag, pcs in extension_classes.items():
+                if tag in lowered and (off % 12) in pcs:
+                    new_off = off + 12
+                    break
+        adjusted.append(new_off)
+    return adjusted
+
+
 # ---------------------- Library build helpers ----------------------
 
-def build_syntakt_library() -> List[Dict[str, Any]]:
+def build_syntakt_library(*, octify_extensions: bool = True) -> List[Dict[str, Any]]:
     """Build the exhaustive library of Syntakt presets (pure, deterministic)."""
     lib: List[Dict[str, Any]] = []
     for sy_root in ALL_ROOTS:
         rv = NOTE_VALUES[sy_root]
         for sy_type, offsets in CHORD_INTERVALS.items():
-            nvoices = min(4, len(offsets))
-            base_offsets = offsets[:nvoices]
+            adj_offsets = _octify_extension_offsets(sy_type, offsets) if octify_extensions else list(offsets)
+            nvoices = min(4, len(adj_offsets))
+            base_offsets = adj_offsets[:nvoices]
             for bal, pat in BAL_PATTERNS.items():
                 octs = _pattern_to_oct(pat, nvoices)
                 abs_semi: List[int] = []
@@ -516,6 +546,7 @@ def list_matches_symbol(
         v = voices_with_octaves(c, anchor_octave=anchor_octave)
         c2 = dict(c)
         c2["notes_oct"] = [d["label"] for d in v]
+        c2["bal_motif"] = c.get("bal_pattern", "")
         c2["metrics"] = metrics
         c2["stars"] = stars
         out.append(c2)
@@ -552,6 +583,7 @@ def list_matches_notes(
         v = voices_with_octaves(c, anchor_octave=anchor_octave)
         c2 = dict(c)
         c2["notes_oct"] = [d["label"] for d in v]
+        c2["bal_motif"] = c.get("bal_pattern", "")
         c2["metrics"] = metrics
         c2["stars"] = stars
         out.append(c2)
@@ -596,8 +628,17 @@ class AnalysisResult:
 class Session:
     """Headless analysis session for Syntakt chord matching."""
 
-    def __init__(self, library: Optional[Sequence[Dict[str, Any]]] = None) -> None:
-        self.library = list(library) if library is not None else build_syntakt_library()
+    def __init__(
+        self,
+        library: Optional[Sequence[Dict[str, Any]]] = None,
+        *,
+        octify_extensions: bool = True,
+    ) -> None:
+        self.library = (
+            list(library)
+            if library is not None
+            else build_syntakt_library(octify_extensions=octify_extensions)
+        )
 
     def analyze(
         self,
@@ -672,8 +713,33 @@ class Session:
             enriched.append(c)
 
         best = enriched[0] if enriched else None
-        copy_lines = [f"Root={c['sy_root']} Preset={c['sy_type']} BAL={c['bal']}" for c in enriched]
+        copy_lines = [
+            f"Root={c['sy_root']} Preset={c['sy_type']} BAL={c['bal']} ({c.get('bal_motif', '')})"
+            for c in enriched
+        ]
         return AnalysisResult(query=query_info, best=best, alternatives=enriched, copy_lines=copy_lines).to_dict()
+
+
+# ---------------------- Keyboard advisor helpers ----------------------
+
+def aggregated_chord_pcs_from_results(results: Sequence[Dict[str, Any]]) -> set:
+    """Aggregate pitch classes from a list of analysis results."""
+
+    pcs: set[int] = set()
+    for res in results:
+        best = res.get("best") or {}
+        labels = best.get("notes_oct") or []
+        if not labels:
+            labels = best.get("notes") or []
+        for label in labels:
+            if not label:
+                continue
+            note = label
+            while note and note[-1].isdigit():
+                note = note[:-1]
+            if note in NOTE_VALUES:
+                pcs.add(NOTE_VALUES[note])
+    return pcs
 
 
 # ---------------------- Formatting utilities ----------------------
@@ -687,8 +753,12 @@ def format_analysis_fr(result: Dict[str, Any]) -> str:
         return "Aucune correspondance trouvée pour l'entrée fournie."
     lines = []
     lines.append(
-        "Résultat : Root={root} Preset={preset} BAL={bal} — ⭐{stars}/5".format(
-            root=best["sy_root"], preset=best["sy_type"], bal=best["bal"], stars=best.get("stars", "?")
+        "Résultat : Root={root} Preset={preset} BAL={bal} {motif} — ⭐{stars}/5".format(
+            root=best["sy_root"],
+            preset=best["sy_type"],
+            bal=best["bal"],
+            motif=best.get("bal_motif", ""),
+            stars=best.get("stars", "?"),
         )
     )
     if best.get("notes_oct"):
