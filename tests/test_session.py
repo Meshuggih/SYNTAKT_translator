@@ -3,8 +3,15 @@ import sys
 
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 
-from mtn.data.SyntaktTranslatorV3 import advise_keyboard_scale
-from mtn.data.syntakt_core import Session, format_analysis_fr, voices_with_octaves
+from sychord import (
+    ANALYSIS_JSON_SCHEMA,
+    Session,
+    advise_keyboard_scale,
+    format_analysis_fr,
+    format_for_syntakt,
+    normalize_input,
+)
+from sychord.core import voices_with_octaves
 
 
 def test_analyze_symbol_returns_best_candidate():
@@ -25,6 +32,15 @@ def test_analyze_notes_supports_octave_anchor():
     assert best is not None
     assert best["notes_oct"][0].startswith("E2")
     assert len(result["alternatives"]) <= 2
+
+
+def test_second_inversion_prefers_bal_106():
+    session = Session()
+    result = session.analyze("E A C", strict=False, topk=3)
+    best = result["best"]
+    assert best is not None
+    assert best["bal"] == 106
+    assert result["copy_lines"][0] == "Root=A Preset=minor BAL=106 (•*••)"
 
 
 def test_formatting_in_french():
@@ -72,3 +88,21 @@ def test_keyboard_scale_advisor_suggests_ionian_major():
         rec["kb_scale"] == "IONIAN (MAJOR)" and rec["root"] == "G"
         for rec in top_three
     )
+
+
+def test_format_for_syntakt_matches_copy_line():
+    session = Session()
+    result = session.analyze("Am")
+    line = format_for_syntakt(result)
+    assert line == result["copy_lines"][0]
+
+
+def test_normalize_input_reports_inversion():
+    data = normalize_input("E A C")
+    assert data["kind"] == "notes"
+    assert data["inversion"] == 2
+    assert data["bass"] == "E"
+
+
+def test_schema_version_exposed():
+    assert ANALYSIS_JSON_SCHEMA["title"] == "sychord.analysis"

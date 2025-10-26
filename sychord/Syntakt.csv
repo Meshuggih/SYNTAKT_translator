@@ -1,0 +1,4 @@
+sy_root,sy_type,bal,bal_pattern,intervals
+C,major,20,•••~,0|4|7
+C,minor,20,•••~,0|3|7
+A,minor,106,•*••,0|3|7
