@@ -6,8 +6,9 @@ Tous les fichiers du dossier `mtn/data` sont conçus pour être chargés comme m
 
 ## Installation et imports
 
-Placez les fichiers du dossier `mtn/data` dans votre environnement cible puis
-importez simplement :
+Copiez les six fichiers plats (`SyntaktTranslatorV3.py`, `syntakt_core.py`,
+`kb_scales.py`, `Syntakt.csv`, `syntakt_documentation.json`, `__init__.py`) dans
+votre environnement cible puis importez simplement :
 
 ```python
 from SyntaktTranslatorV3 import Session, format_analysis_fr

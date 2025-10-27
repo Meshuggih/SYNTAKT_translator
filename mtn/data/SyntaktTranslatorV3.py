@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
+# Imports explicites depuis le moteur plat : aucun import relatif requis.
 from syntakt_core import (
     ANALYSIS_JSON_SCHEMA,
     ENGINE_VERSION,
