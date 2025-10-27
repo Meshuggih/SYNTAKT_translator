@@ -88,15 +88,23 @@ QUALITY_ALIASES: Dict[str, str] = {
     "M": "major",
     "maj": "major",
     "major": "major",
+    "Maj": "major",
     "M7": "Maj7",
     "Maj7": "Maj7",
     "maj7": "Maj7",
+    "MAJ7": "Maj7",
     "M6": "M6",
     "6": "M6",
     "maj6": "M6",
+    "Maj6": "M6",
     "m": "minor",
     "min": "minor",
     "minor": "minor",
+    "minorTriad": "minor",
+    "m6": "m6",
+    "min6": "m6",
+    "minor6": "m6",
+    "minorSix": "m6",
     "m7": "m7",
     "min7": "m7",
     "minor7": "m7",
@@ -107,6 +115,7 @@ QUALITY_ALIASES: Dict[str, str] = {
     "mM7": "mMaj7",
     "minorMaj7": "mMaj7",
     "minorMajor7": "mMaj7",
+    "mmaj7": "mMaj7",
     "dim": "diminished",
     "diminished": "diminished",
     "dim7": "dim7",
@@ -116,6 +125,7 @@ QUALITY_ALIASES: Dict[str, str] = {
     "m7b5": "m7b5",
     "aug": "augmented",
     "augmented": "augmented",
+    "Aug": "augmented",
     "augM7": "augM7",
     "+M7": "augM7",
     "add9": "add9",
@@ -123,6 +133,8 @@ QUALITY_ALIASES: Dict[str, str] = {
     "madd9": "madd9",
     "sus2": "sus2",
     "sus4": "sus4",
+    "Sus2": "sus2",
+    "Sus4": "sus4",
 }
 
 
@@ -324,10 +336,14 @@ def load_library() -> List[Preset]:
 
 
 def _quality_from_alias(alias: str) -> Optional[str]:
-    key = alias.strip()
+    key = (alias or "").strip()
     if not key:
         return "major"
-    return QUALITY_ALIASES.get(key, None)
+    cleaned = re.sub(r"[\s_-]+", "", key)
+    for candidate in (cleaned, cleaned.lower(), cleaned.upper(), cleaned.title()):
+        if candidate in QUALITY_ALIASES:
+            return QUALITY_ALIASES[candidate]
+    return None
 
 
 def _quality_from_pcs(pcs: Iterable[int], voice_count: int) -> Optional[str]:
