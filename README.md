@@ -2,7 +2,7 @@
 
 Ce dépôt fournit une version autonome du traducteur **SY CHORD** pour le Syntakt.
 Tous les fichiers du dossier `mtn/data` sont conçus pour être chargés comme modules
-*top-level* : aucun import `mtn.data.*` n'est nécessaire.
+*top-level* ; utilisez uniquement les imports plats présentés ci-dessous.
 
 ## Installation et imports
 
