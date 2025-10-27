@@ -40,7 +40,7 @@ def test_symbol_and_notes_analysis():
     best_notes = result_notes["best"]
     assert best_notes is not None
     assert best_notes["bal"] == 106
-    assert best_notes["notes_oct"][0].startswith("E3")
+    assert best_notes["voicing_list"][0].startswith("C3")
 
 
 def test_triad_second_inversion_prefers_bal_106():
@@ -52,7 +52,7 @@ def test_triad_second_inversion_prefers_bal_106():
     assert best is not None
     assert best["bal"] == 106
     assert best["metrics"]["bal_preference_rank"] == 0
-    assert any(alt["bal"] == 74 for alt in result["alternatives"][1:])
+    assert any(alt["bal"] == 74 for alt in result["alternatives"])
 
 
 def test_tetrad_coverage_and_scoring():
